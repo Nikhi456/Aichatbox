@@ -1,102 +1,147 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-body{
+
+body {
     width: 100%;
     height: 100%;
     background-color: rgb(49, 57, 67);
 }
-.container{
-width: 100%;
-height: 100vh;
-display: flex;
-align-items: center;
-flex-direction: column;
-padding-top: 50px;
 
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
 }
+
 .container h1 {
-    font-size: 10vw;
+    font-size: 8vw; /* Adjusted for responsiveness */
     background: linear-gradient(to right, white, rgba(18, 176, 204, 0.681), rgba(199, 35, 103, 0.784));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
-.container h2{
-    font-size:3vw;
+
+.container h2 {
+    font-size: 4vw; /* Adjusted for responsiveness */
     color: rgba(240, 248, 255, 0.729);
 }
-.prompt-area{
-width: 100%;
-height: 120px;
-background-color: rgb(49, 57, 67);
-position: fixed;
-bottom: 0;
-display: flex;
-align-items: center;
-justify-content: center;
+
+.prompt-area {
+    width: 100%;
+    height: 10vh; /* Using viewport height for responsiveness */
+    background-color: rgb(49, 57, 67);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#prompt{
+
+#prompt {
     background-color: rgba(240, 248, 255, 0.42);
-width: 60%;
-height: 60%;
-padding: 20px;
-outline: none;
-border: 2px solid rgb(43,51,57);
-border-right: none;
-border-radius: 30px 0px 0px 30px;
- box-shadow: inset 2px 2px 10px black,insert -2px -4px 10px black,insert -2px -4px 10px black;
- font-size: 20px;
- color: white;
+    width: 60%;
+    height: 60%;
+    padding: 10px; /* Reduced padding for better fit on small screens */
+    outline: none;
+    border: 2px solid rgb(43, 51, 57);
+    border-right: none;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: inset 2px 2px 10px black, insert -2px -4px 10px black, insert -2px -4px 10px black;
+    font-size: 2.5vw; /* Using viewport width for responsiveness */
+    color: white;
 }
-#btn{
+
+#btn {
     width: 10%;
     height: 57%;
     background: rgb(20, 181, 213);
     border-radius: 0px 30px 30px 0px;
-    border: 2px solid rgb(43,51,57);
+    border: 2px solid rgb(43, 51, 57);
     border-left: none;
     border: none;
     cursor: pointer;
     transition: 0.5s all;
+    font-size: 2vw; /* Responsive font size */
 }
-#btn:hover{
-    background-color: rgb(20, 181, 213,0.644);
+
+#btn:hover {
+    background-color: rgb(20, 181, 213, 0.644);
 }
-.chat-container{
+
+.chat-container {
     width: 100%;
-   max-height: calc(100vh -80px);
-   overflow-y: auto;
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   padding: 20px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjusted gap for better fit */
+    padding: 20px;
 }
-.user-chat-box{
-width: 70%;
-padding: 20px;
-display: flex;
-background-color: rgb(75, 146, 209);
-border-radius: 30px 30px 0px 30px;
-color: rgba(255, 255, 255, 0.856);
-font-size: 20px;
-box-shadow: 2px 2px 10px black;
-}
-.img{
-  width: 80px;
-  height: 100%;  
-}
-.ai-chat-box{
+
+.user-chat-box {
     width: 70%;
-padding: 20px;
-display: flex;
-background-color: rgba(75, 147, 209, 0.308);
-border-radius: 30px 30px 30px 0px;
-color: rgba(255, 255, 255, 0.827);
-font-size: 20px;
-box-shadow: 2px 2px 10px black;
+    padding: 15px; /* Reduced padding for better fit */
+    display: flex;
+    background-color: rgb(75, 146, 209);
+    border-radius: 30px 30px 0px 30px;
+    color: rgba(255, 255, 255, 0.856);
+    font-size: 2.5vw; /* Responsive font size */
+    box-shadow: 2px 2px 10px black;
+}
+
+.img {
+    width: 8%; /* Use percentage for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.ai-chat-box {
+    width: 70%;
+    padding: 15px; /* Reduced padding for better fit */
+    display: flex;
+    background-color: rgba(75, 147, 209, 0.308);
+    border-radius: 30px 30px 30px 0px;
+    color: rgba(255, 255, 255, 0.827);
+    font-size: 2.5vw; /* Responsive font size */
+    box-shadow: 2px 2px 10px black;
+}
+
+/* Media Queries for Further Adjustments */
+@media (max-width: 768px) {
+    #prompt {
+        width: 80%; /* Wider input on smaller screens */
+    }
+
+    #btn {
+        width: 15%; /* Wider button on smaller screens */
+    }
+
+    .user-chat-box, .ai-chat-box {
+        width: 90%; /* Wider chat boxes on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 10vw; /* Further adjust title size */
+    }
+
+    .container h2 {
+        font-size: 5vw; /* Further adjust subtitle size */
+    }
+
+    #prompt {
+        font-size: 3vw; /* Further adjust input font size */
+    }
+
+    #btn {
+        font-size: 3vw; /* Further adjust button font size */
+    }
 }
